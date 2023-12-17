@@ -3006,7 +3006,7 @@ mpp_Process_VolumeCommand:
 @ single gxx
 
 	cmp	r0, #0
-	beq	1f
+	bne	1f
 	ldrb	r0, [r7, #MCH_MEMORY+MPP_GLIS_MEM]
 1:	strb	r0, [r7, #MCH_MEMORY+MPP_GLIS_MEM]
 	b	.mppe_glis_ot
@@ -3014,7 +3014,7 @@ mpp_Process_VolumeCommand:
 2: @ shared gxx
 
 	cmp	r0, #0
-	beq	1f
+	bne	1f
 	ldrb	r0, [r7, #MCH_MEMORY+MPP_IT_PORTAMEM]
 1:	strb	r0, [r7, #MCH_MEMORY+MPP_IT_PORTAMEM]
 	strb	r0, [r7, #MCH_MEMORY+MPP_GLIS_MEM]
